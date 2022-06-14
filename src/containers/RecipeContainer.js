@@ -3,7 +3,7 @@ import RecipeList from "../components/RecipeList";
 
 const RecipeContainer = () => {
 
-    const recipes = useState ([
+    const [recipes] = useState ([
         {
             cakeName: "Lemon Drizzle",
             ingredients: ["eggs", "butter", "lemon  zest", "sugar", "self-raising flour"],
