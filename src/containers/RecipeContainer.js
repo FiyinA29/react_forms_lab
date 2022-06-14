@@ -1,9 +1,11 @@
 import { useState } from "react"
+import NewRecipe from "../components/NewRecipe";
 import RecipeList from "../components/RecipeList";
+import React from "react";
 
 const RecipeContainer = () => {
 
-    const [recipes] = useState ([
+    const [recipes, setRecipes] = useState([
         {
             cakeName: "Lemon Drizzle",
             ingredients: ["eggs", "butter", "lemon  zest", "sugar", "self-raising flour"],
@@ -24,13 +26,19 @@ const RecipeContainer = () => {
             ingredients: ["carrots", "walnuts", "oil", "cream cheese", "flour", "sugar"],
             rating: 5
         }
-      ]);
+    ]);
+
+    //   const addNewRecipe = () => {
+    //     console.log("New Recipe Added!");
+    //     const updatedRecipe = [...recipes]
+    //     setRecipe(updatedRecipe);
+    //   }
 
     return (
         <>
-        <h1>Recipe List</h1>
-        <RecipeList recipes={recipes}/>
+            <RecipeList recipes={recipes} />
+            <NewRecipe setRecipes={setRecipes} recipes={recipes} />
         </>
     )
 }
-export default RecipeContainer
+export default RecipeContainer;
